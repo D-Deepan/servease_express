@@ -108,6 +108,7 @@ exports.checkoutUser = async (req, res) => {
   exports.handlerefreshtoken = async(req, res) =>{
     console.log('in backend')
     const refreshToken = req.cookies.refreshToken;
+    console.log(refreshToken)
     if (!refreshToken) return res.sendStatus(401); // No token provided
   
     try {
