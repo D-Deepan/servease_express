@@ -77,7 +77,7 @@ exports.checkoutUser = async (req, res) => {
       user.refreshToken = refreshToken;
       await user.save();
 
-      res.cookie('refreshToken',refreshToken,{ httpOnly: true , secure: true ,maxAge: 24*60*60*1000});
+      res.cookie('refreshToken',refreshToken,{ httpOnly: true , secure: true , sameSite: 'none',maxAge: 24*60*60*1000});
       return res.status(200).json({ message: "Login successful", accessToken , role: user.role,roomNo: user.roomNo });
     } catch (error) {
       return res.status(500).json({ error:  error.message  });
