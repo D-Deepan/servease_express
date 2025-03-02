@@ -1,7 +1,7 @@
 // corsOptions.js
 const allowedOrigins = [
-    'http://localhost:3000', // React frontend running locally
-    'https://servease-hkaw.onrender.com' // Your production domain
+    'http://localhost:3000' // React frontend running locally
+     // Your production domain
   ];
   
   const corsOptions = {
